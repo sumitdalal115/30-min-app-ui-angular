@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <head>
+        <title>Learning AngularJS</title>
+        <script src="src.js" type="text/javascript"> </script>
+        <script src="app.js" type="text/javascript"></script>
+        <script src="myController.js" type="text/javascript"></script>
+    </head>
+<body>
+    <h1>30 minute angular app</h1>
+    <div id='content' ng-app='myApp' ng-controller='myController'>this is div content : {{msg}}
+        <input type='text' ng-model='name'>{{name}} <br/>
+        <select ng-model='favFruit'>
+            <option ng-repeat="fr in fruits" ng-selected="fr=='orange'">{{fr}}</option>
+        </select>
+        <div>favourite fruit : {{favFruit}}</div><br>selecteed stud id : {{selectedStudentId}}<br>
+        <select ng-model='selectedStudentId' ng-options='student.id as student.name for student in students'></select>
+        <select ng-model='selectedSubject'>
+            <option ng-repeat='subject in students[selectedStudentId].subjects' ng-selected="subject == students[selectedStudentId].subjects[2]">{{subject}}</option>
+        </select>
+    </div>
+</body>
+</html>
